@@ -67,8 +67,7 @@
             v-bind:aria-hidden="tabName !== 'home'"
             role="tabpanel"
         >
-        ホーム
-        </div>
+        ホーム</div>
         <div
             id="classExhibition"
             aria-labelledby="tab2"
@@ -165,7 +164,6 @@ button {
     padding: 10px 20px;
 }
 [role="tabpanel"]{
-    border: 1px solid lightgray;
     padding: 2rem;
 }
 [aria-hidden="true"]{
@@ -177,6 +175,10 @@ button {
 [aria-selected="true"]{
     background-color: royalblue;
     color: white;
+}
+[role="tablist"]{
+    position: sticky;
+    top: 0;
 }
 
 </style>

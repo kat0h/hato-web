@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <a href="index.html"><img src="./assets/logo.svg" width="100"></a>
+        <header class=header> <a href="index.html"><img src="./assets/logo.svg" width="100"></a> </header>
         <tabuicompornents></tabuicompornents>
-        <h6>{{ msg }}</h6>
+        <footer><h6>{{ msg }}</h6></footer>
     </div>
 </template>
 
@@ -31,4 +31,5 @@ export default {
     color: #2c3e50;
     margin-top: 10px;
 }
+
 </style>
