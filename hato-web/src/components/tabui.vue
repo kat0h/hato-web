@@ -172,6 +172,9 @@ button {
     white-space: nowrap;
     background: #fff;
 }
+[role="tablist"]::-webkit-scrollbar{
+    display: none;
+}
 [role="tabName"]{
     position: relative;
     display: inline-block;
@@ -187,7 +190,7 @@ button {
     transition: .4s;
     display: inline-block;
     font-weight: bold;
-    margin: 7px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
 }
 [aria-selected="true"]{
     color: #FFF;
