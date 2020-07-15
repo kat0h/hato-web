@@ -67,14 +67,15 @@
             v-bind:aria-hidden="tabName !== 'home'"
             role="tabpanel"
         >
-        ホーム</div>
+        <uihometab class="tabcontent"></uihometab>
+        </div>
         <div
             id="classExhibition"
             aria-labelledby="tab2"
             v-bind:aria-hidden="tabName !== 'classExhibition'"
             role="tabpanel"
         >
-        クラス展
+        工事中
         </div>
         <div
             id="stampRally"
@@ -82,7 +83,7 @@
             v-bind:aria-hidden="tabName !== 'stampRally'"
             role="tabpanel"
         >
-        スタンプラリー
+        工事中
         </div>
         <div
             id="sale"
@@ -90,7 +91,7 @@
             v-bind:aria-hidden="tabName !== 'sale'"
             role="tabpanel"
         >
-        販売
+        工事中
         </div>
         <div
             id="schedule"
@@ -98,7 +99,7 @@
             v-bind:aria-hidden="tabName !== 'schedule'"
             role="tabpanel"
         >
-        スケジュール
+        工事中
         </div>
         <div
             id="information"
@@ -106,19 +107,23 @@
             v-bind:aria-hidden="tabName !== 'information'"
             role="tabpanel"
         >
-        インフォメーション
+        工事中
         </div>
     </div>
 </template>
 
 <script>
 
+import homeTabUI from './hometab.vue'
 export default {
     name: 'HatoWeb',
     data(){
         return {
             tabName: "home"
         }
+    },
+    components:{
+        "uihometab": homeTabUI
     },
     methods: {
         /**
@@ -139,14 +144,6 @@ export default {
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 10px;
-}
 [role="tablist"]{
     display: flex;
 }
@@ -160,11 +157,7 @@ li{
 }
 button {
     appearance: none;
-
     padding: 10px 20px;
-}
-[role="tabpanel"]{
-    padding: 2rem;
 }
 [aria-hidden="true"]{
     display: none;
@@ -172,13 +165,44 @@ button {
 [aria-hidden="false"]{
     display: block;
 }
-[aria-selected="true"]{
-    background-color: royalblue;
-    color: white;
-}
 [role="tablist"]{
     position: sticky;
-    top: 0;
+    top: 0px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: #fff;
+}
+[role="tabName"]{
+    position: relative;
+    display: inline-block;
+    padding: 8px 10px 5px 10px;
+    height: 50px;
+    width: 100px;
+    text-decoration: none;
+    color: #44617b;
+    background: #fff;
+    border-bottom: solid 4px #44617b;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    transition: .4s;
+    display: inline-block;
+    font-weight: bold;
+    margin: 7px 0px 0px 0px;
+}
+[aria-selected="true"]{
+    color: #FFF;
+    background: #44617b;
+}
+[role="tabName"]:focus{
+    outline: 0;
+}
+[role="tabpanel"]{
+    padding: 2rem;
+    color: #fff;
+    background: #44617b;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 </style>
