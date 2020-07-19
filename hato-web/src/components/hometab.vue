@@ -1,5 +1,7 @@
 <template>
-    <h1>ホームのタブ<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></h1>
+    <div id="hometab">
+        <h1>ホームのタブ</h1>
+    </div>
 </template>
 
 <script>
@@ -9,12 +11,12 @@ export default {
 </script>
 
 <style>
-    #app {
+    #hometab {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
+        color: #fff;
         margin-top: 10px;
     }
 </style>

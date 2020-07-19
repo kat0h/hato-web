@@ -1,6 +1,6 @@
 <template>
     <div id="tabui">
-        <ul role="tablist">
+        <ul id="tablist">
             <li role="presentation">
                 <button
                     aria-controls="home"
@@ -70,20 +70,20 @@
         <uihometab class="tabcontent"></uihometab>
         </div>
         <div
-            id="classExhibition"
-            aria-labelledby="tab2"
-            v-bind:aria-hidden="tabName !== 'classExhibition'"
-            role="tabpanel"
-        >
-        工事中
-        </div>
-        <div
             id="stampRally"
             aria-labelledby="tab3"
             v-bind:aria-hidden="tabName !== 'stampRally'"
             role="tabpanel"
         >
-        工事中
+        <uistampTab class="tabcontent"></uistampTab>
+        </div>
+        <div
+            id="classExhibition"
+            aria-labelledby="tab2"
+            v-bind:aria-hidden="tabName !== 'classExhibition'"
+            role="tabpanel"
+        >
+        <uiclassTab class="tabcontent"></uiclassTab>
         </div>
         <div
             id="sale"
@@ -91,7 +91,7 @@
             v-bind:aria-hidden="tabName !== 'sale'"
             role="tabpanel"
         >
-        工事中
+        <uisaleTab class="tabcontent"></uisaleTab>
         </div>
         <div
             id="schedule"
@@ -99,7 +99,7 @@
             v-bind:aria-hidden="tabName !== 'schedule'"
             role="tabpanel"
         >
-        工事中
+        <uischeduleTab class="tabcontent"> </uischeduleTab>
         </div>
         <div
             id="information"
@@ -107,7 +107,7 @@
             v-bind:aria-hidden="tabName !== 'information'"
             role="tabpanel"
         >
-        工事中
+        <uiinfoTab class="tabcontent"></uiinfoTab>
         </div>
     </div>
 </template>
@@ -115,6 +115,12 @@
 <script>
 
 import homeTabUI from './hometab.vue'
+import stampTabUI from './stampTab.vue'
+import classTabUI from "./classTab.vue"
+import infoTabUI from "./infoTab.vue"
+import saleTabUI from "./saleTab.vue"
+import scheduleTabUI from "./scheduleTab.vue"
+
 export default {
     name: 'HatoWeb',
     data(){
@@ -123,7 +129,12 @@ export default {
         }
     },
     components:{
-        "uihometab": homeTabUI
+        "uihometab": homeTabUI,
+        "uistampTab": stampTabUI,
+        "uiclassTab": classTabUI,
+        "uiinfoTab": infoTabUI,
+        "uisaleTab": saleTabUI,
+        "uischeduleTab": scheduleTabUI,
     },
     methods: {
         /**
@@ -144,8 +155,17 @@ export default {
 </script>
 
 <style>
-[role="tablist"]{
+/* タブのボタンに対するCSS */
+#tablist{
     display: flex;
+    position: sticky;
+    top: 0px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: #fff;
+}
+#tablist::-webkit-scrollbar{
+    display: none;
 }
 ul{
     padding: 0;
@@ -155,25 +175,9 @@ li{
     list-style: none;
     margin: 0;
 }
-button {
+button{
     appearance: none;
     padding: 10px 20px;
-}
-[aria-hidden="true"]{
-    display: none;
-}
-[aria-hidden="false"]{
-    display: block;
-}
-[role="tablist"]{
-    position: sticky;
-    top: 0px;
-    overflow-x: auto;
-    white-space: nowrap;
-    background: #fff;
-}
-[role="tablist"]::-webkit-scrollbar{
-    display: none;
 }
 [role="tabName"]{
     position: relative;
@@ -188,7 +192,6 @@ button {
     border: none;
     border-radius: 15px 15px 0 0;
     transition: .4s;
-    display: inline-block;
     font-weight: bold;
     margin: 10px 0px 0px 0px;
 }
@@ -199,6 +202,7 @@ button {
 [role="tabName"]:focus{
     outline: 0;
 }
+/* タブのパネルに対するCSS */
 [role="tabpanel"]{
     padding: 2rem;
     color: #fff;
@@ -207,5 +211,8 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+[aria-hidden="true"]{
+    display: none;
+}
 </style>
+
