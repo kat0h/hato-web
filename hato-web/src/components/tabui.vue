@@ -214,5 +214,19 @@ button{
 [aria-hidden="true"]{
     display: none;
 }
+[role="cardButton"]{
+    border-radius: 20px;
+    color: #44617b;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    background: #FFF;
+    width: 100%;
+    border: none;
+};
+.cardTab{
+    display: flex;
+    flex-direction:column;
+};
 </style>
 

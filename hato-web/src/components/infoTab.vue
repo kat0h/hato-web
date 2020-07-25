@@ -1,16 +1,27 @@
 <template>
-    <div id="infoTab">
-        <ul>
+    <div id="infoTab" >
+        <ul class="cardTab">
             <li>
-                <button class="cardButton" v-on:click="cardClicked">
+                <button
+                role="cardButton"
+                v-on:click="cardClicked"
+                >
                     検索
                 </button>
             </li>
-                <button class="cardButton" v-on:click="cardClicked">
+            <li>
+                <button
+                role="cardButton"
+                v-on:click="cardClicked"
+                >
                     Map
                 </button>
+            </li>
             <li>
-                <button class="cardButton" v-on:click="cardClicked">
+                <button
+                role="cardButton"
+                v-on:click="cardClicked"
+                >
                     リンク
                 </button>
             </li>
@@ -30,17 +41,3 @@ export default {
     },
 }
 </script>
-
-<style>
-    #infoTab {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #fff;
-        margin-top: 10px;
-    }
-    .cardButton{
-        background: red;
-    }
-</style>
