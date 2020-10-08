@@ -8,8 +8,13 @@
   <TabUI/>
   <!-- フッター -->
   <footer>
+    <div id="footerLogo">
+        <a href="index.html">
+        <img src="./assets/logo.svg" id="footerImg"/>
+        </a>
+    </div>
     <h6>
-      Copyright︎ 2020 KotaKato. All rights reserved.
+    Copyright︎ 2020 KotaKato. All rights reserved.
     </h6>
   </footer>
 </template>
@@ -33,10 +38,14 @@ export default {
   color: #2c3e50;
   margin-top: 10px;
 }
-header {
-  text-align: center;
-}
 header a img {
   width: 100px;
+}
+#footerImg {
+ width: 50px;
+ padding: 0;
+}
+footer h6 {
+    margin: 0;
 }
 </style>

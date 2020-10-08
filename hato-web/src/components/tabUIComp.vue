@@ -39,7 +39,7 @@
         </ul>
         <ul class="tabArticle">
             <li class="article" v-show="isTabActive === 'home'">
-                HOME
+                <tabHomeArticle> </tabHomeArticle>
             </li>
             <li class="article" v-show="isTabActive === 'stamp'">
                 STAMP
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import tabHomeArticle from './tabArticle/tabHomeArticle.vue'
 export default {
     name: 'tabUI',
     data(){
@@ -65,6 +66,9 @@ export default {
         isTabActive: 'home'
     }
     },
+components: {
+    "tabHomeArticle": tabHomeArticle,
+            },
     methods: {
         selArticle: function(tabName){
             this.isTabActive = tabName
@@ -129,5 +133,6 @@ outline: none;
 .article {
 color: #FFF;
 background: #44617b;
+margin: 0px;
 }
 </style>
