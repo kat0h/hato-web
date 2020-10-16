@@ -42,7 +42,7 @@
                 <tabHomeArticle> </tabHomeArticle>
             </li>
             <li class="article" v-show="isTabActive === 'stamp'">
-                STAMP
+                <tabStampArticle></tabStampArticle>
             </li>
             <li class="article" v-show="isTabActive === 'class'">
                 CLASS
@@ -59,6 +59,7 @@
 
 <script>
 import tabHomeArticle from './tabArticle/tabHomeArticle.vue'
+import tabStampArticle from './tabArticle/tabStampArticle'
 export default {
     name: 'tabUI',
     data(){
@@ -67,7 +68,8 @@ export default {
     }
     },
 components: {
-    "tabHomeArticle": tabHomeArticle,
+    "tabHomeArticle" : tabHomeArticle,
+    "tabStampArticle": tabStampArticle
             },
     methods: {
         selArticle: function(tabName){
@@ -111,14 +113,14 @@ display: none;
 position: relative;
 display: inline-block;
 padding: 8px 10px 5px 10px;
-height: 50px;
+height: 3em;
 width: 100px;
 text-decoration: none;
 color: #44617b;
 background: #fff;
 border-bottom: solid 4px #44617b;
 border: none;
-border-radius: 15px 15px 0 0;
+border-radius: 10px 10px 0 0;
 transition: .4s;
 font-weight: bold;
 margin: 10px 0px 0px 0px;
@@ -134,5 +136,7 @@ outline: none;
 color: #FFF;
 background: #44617b;
 margin: 0px;
+padding: 15px;
+border-radius: 0 0 10px 10px;
 }
 </style>
